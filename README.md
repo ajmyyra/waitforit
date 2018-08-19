@@ -18,3 +18,20 @@ Ready-built container is found in Docker Hub. You can run it simply with the fol
 docker run --rm -e HOST=example.com -e PORT=80 -e TIMEOUT=15 ajmyyra/waitforit:1
 ```
 
+# Usage as Kubernetes InitContainer
+
+Lets assume you have a database-backed application that you want to start after the database itself is up. You can define waitforit as InitContainer for your pod, so it will run to check database status before the actual pod starts.
+
+Add this before containers in your specfile:
+```
+initContainers:
+- name: database-check
+  image: ajmyyra/waitforit:1
+  env:
+  - name: HOST
+    value: mysql-service
+  - name: PORT
+    value: '3306'
+```
+
+This way Kubernetes waits before starting the real application until the database is up and responding. If you want to change the timeout from standard 120 seconds, just add it as the TIMEOUT variable in seconds.

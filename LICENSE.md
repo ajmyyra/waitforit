@@ -1,6 +1,6 @@
 The MIT License (MIT)
 Copyright (c) 2016 Giles Hall (wait-for-it.sh)
-Dockerfile by Antti Myyrä
+Dockerfile and rest of this by Antti Myyrä
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
