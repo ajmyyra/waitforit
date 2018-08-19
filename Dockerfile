@@ -9,4 +9,4 @@ COPY run-from-env.sh /usr/src/app/
 
 RUN chmod +x /usr/src/app/*.sh
 
-ENTRYPOINT ["run-from-env.sh"] 
+ENTRYPOINT ["/usr/src/app/run-from-env.sh"] 
