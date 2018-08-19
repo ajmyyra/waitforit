@@ -12,4 +12,9 @@ If you're building your own images, there's no need to have initContainers in pl
 
 # Dockerised version
 
-TODO
+Ready-built container is found in Docker Hub. You can run it simply with the following command:
+
+```
+docker run --rm -e HOST=example.com -e PORT=80 -e TIMEOUT=15 ajmyyra/waitforit:1
+```
+
